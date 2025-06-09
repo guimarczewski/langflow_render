@@ -3,7 +3,7 @@ services:
     name: langflow-app
     env: docker
     dockerfilePath: ./Dockerfile
-    plan: starter  # You can change to 'standard' or 'pro' for more resources
+    plan: free  # You can change to 'standard' or 'pro' for more resources
     envVars:
       - key: LANGFLOW_HOST
         value: "0.0.0.0"
