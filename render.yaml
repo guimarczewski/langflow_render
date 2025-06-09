@@ -26,4 +26,4 @@ databases:
   - name: langflow-db
     databaseName: langflow
     user: langflow_user
-    plan: starter  # Free PostgreSQL database
+    plan: free  # Free PostgreSQL database
