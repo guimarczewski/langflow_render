@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: langflow-app
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter  # You can change to 'standard' or 'pro' for more resources
+    envVars:
+      - key: LANGFLOW_HOST
+        value: "0.0.0.0"
+      - key: LANGFLOW_PORT
+        value: "10000"
+      - key: LANGFLOW_WORKERS
+        value: "1"
+      - key: LANGFLOW_LOG_LEVEL
+        value: "INFO"
+      - key: LANGFLOW_CACHE_TYPE
+        value: "InMemoryCache"
+      - key: LANGFLOW_AUTO_LOGIN
+        value: "false"
+      - key: PYTHONUNBUFFERED
+        value: "1"
+    healthCheckPath: /health
+    autoDeploy: true
+
+databases:
+  - name: langflow-db
+    databaseName: langflow
+    user: langflow_user
+    plan: starter  # Free PostgreSQL database
